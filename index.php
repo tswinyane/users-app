@@ -135,7 +135,7 @@
 					    <td><?php echo $fetch['id']?></td>
 						<td><?php echo $fetch['name']?></td>
 						<td><?php echo $fetch['surname']?></td>
-						<td><?php echo $fetch['gender']?></td>
+						<td><?php if($fetch['gender']==0){echo "Male";}else{echo "Female";}?></td>
 						<td><?php echo $fetch['date_modified']?></td>
 						<input type="hidden" name="fname" id="fname" value="<?php echo $fetch['name']?>">						
 						<td>
