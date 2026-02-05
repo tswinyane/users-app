@@ -65,5 +65,5 @@
     $dompdf->render();
 
     // Output to browser (download)
-    $dompdf->stream("report.pdf", ["Attachment" => true]);
+    $dompdf->stream("Report.pdf", ["Attachment" => true]);
 
