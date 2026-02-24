@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 20, 2025 at 09:28 AM
--- Server version: 8.0.42-0ubuntu0.24.04.1
+-- Generation Time: Feb 24, 2026 at 02:03 PM
+-- Server version: 8.0.45-0ubuntu0.24.04.1
 -- PHP Version: 8.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,8 +18,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ktu_users`
+-- Database: `usersdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `stud_id` int NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `year` varchar(10) NOT NULL,
+  `section` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`stud_id`, `firstname`, `lastname`, `year`, `section`) VALUES
+(1, 'John', 'Smith', 'II', 'A');
 
 -- --------------------------------------------------------
 
@@ -29,9 +50,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `user` (
   `id` int NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `surname` varchar(100) NOT NULL,
-  `gender` int NOT NULL,
+  `name` varchar(155) NOT NULL,
+  `surname` varchar(155) NOT NULL,
+  `gender` varchar(10) NOT NULL,
   `date_modified` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -40,13 +61,19 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `surname`, `gender`, `date_modified`) VALUES
-(11, 'Joe', 'Doe', 0, '2025-08-20 11:26:43'),
-(12, 'Jack', 'Pack', 0, '2025-08-20 11:26:56'),
-(13, 'User', 'User4', 1, '2025-08-20 11:27:21');
+(1, 'Alfred', 'Mahlangu', '0', '2026-01-13 17:14:34'),
+(2, 'Test1', 'Test2', '0', '2026-01-15 16:18:56'),
+(3, 'Test2', 'Test2', '1', '2026-01-22 13:45:22');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`stud_id`);
 
 --
 -- Indexes for table `user`
@@ -59,10 +86,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `stud_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
